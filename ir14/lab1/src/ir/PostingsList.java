@@ -53,7 +53,6 @@ public class PostingsList implements Comparable<PostingsList>, Serializable {
     			entry = new PostingsEntry(docID, 0);
     			list.addLast(entry);
     		}
-    		
     	} else {
 	    	for(PostingsEntry e : list) {
 	    		if(e.docID >= docID) {

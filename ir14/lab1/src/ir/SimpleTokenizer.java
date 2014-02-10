@@ -42,14 +42,14 @@ public class SimpleTokenizer {
 
     /** Handling of non-standard characters */
     static final char[] special_char =
-    { '�', '�', '�', '�', '�', '�', '�', '�', '�', '�', '�', '�', '�', '�', '�', '�', '�', '�', '�', 165, 164, 8222, 182, 184, 732, 8211, 195 };
+    { '\u00E1', '\u00E0', '\u00E2', '\u00E5', '\u00E4', '\u00E9', '\u00E8', '\u00EA', '\u00ED', '\u00F1', '\u00F6', '\u00F4', '\u00FC', '\u00FA', '\u00F9', '\u00FB', '\u00C5', '\u00C4', '\u00D6', 165, 164, 8222, 182, 184, 732, 8211, 195 };
 
     /** 
      *  What special characters should be translated into. 
      *  NB: This array should have the same size as the one above!
      */
     static final char[] translation =
-    { 'a', 'a', 'a', '�', '�', 'e', 'e', 'e', 'i', 'n', '�', 'o', '�', 'u', 'u', 'u', '�', '�', '�', '�', '�', '�', '�', '�', '�', '�', '#' };
+    { 'a', 'a', 'a', '\u00E5', '\u00E4', 'e', 'e', 'e', 'i', 'n', '\u00F6', 'o', '\u00FC', 'u', 'u', 'u', '\u00E5', '\u00E4', '\u00F6', '\u00E5', '\u00E4', '\u00E4', '\u00F6', '\u00F6', '\u00F6', '\u00F6', '#' };
 
 
 
@@ -212,7 +212,6 @@ public class SimpleTokenizer {
 	}
     }
 }
-
 
 
 
