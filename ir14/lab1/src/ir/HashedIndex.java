@@ -10,6 +10,12 @@
 
 package ir;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.RandomAccessFile;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -59,7 +65,6 @@ public class HashedIndex implements Index {
 		return index.get(token);
     }
 
-
     /**
      *  Searches the index for postings matching the query.
      */
@@ -73,24 +78,19 @@ public class HashedIndex implements Index {
     		
     		return getPostings((query.terms.getFirst()));
     	} else if(queryType == Index.INTERSECTION_QUERY) {
-			PriorityQueue<PostingsList> queue = new PriorityQueue<PostingsList>(query.terms.size());
-			
+			results = getPostings(query.terms.pollFirst());
+			if(results == null) {
+				return null;
+			}
+    		
 			for(String term : query.terms) {
 				PostingsList list = getPostings(term);
 				if(list == null) {
-					list = new PostingsList();
+					return null;
 				}
 				
-				queue.offer(list);
+				results = PostingsList.getIntersection(results, list);
 			}
-			
-			results = queue.poll();
-			while(!queue.isEmpty()) {
-				results = PostingsList.getIntersection(results, queue.poll());
-			}
-			
-			return results;
-			
 		} else if(queryType == Index.PHRASE_QUERY) {
 			results = getPostings(query.terms.pollFirst());
 			

@@ -9,12 +9,20 @@
 
 package ir;
 
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.io.RandomAccessFile;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.StringTokenizer;
+import java.util.concurrent.ArrayBlockingQueue;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -42,7 +50,7 @@ public class SearchGUI extends JFrame {
     int queryType = Index.INTERSECTION_QUERY;
 
     /**  The index type (either entirely in memory or partly on disk). */
-    int indexType = Index.HASHED_INDEX;
+    static int indexType = Index.HASHED_INDEX;
 
     /**  The ranking type (either tf-idf, pagerank, or combination). */
     int rankingType = Index.TF_IDF;
@@ -55,7 +63,12 @@ public class SearchGUI extends JFrame {
 
     /**  Directory from which the code is compiled and run. */
     public static final String homeDir = "/afs/nada.kth.se/home/v/u1tcl0jv/git/kth/ir14";
-
+    
+    /** Path to tokens file (for DiskIndex) */
+    private static final String tokensFilePath = "/tmp/tokens.txt";
+    
+    /** Path to occurrences file (for DiskIndex) */
+    private static final String occurrencesFilePath = "/tmp/occurrences.txt";
 
     /*
      *   The nice logotype
@@ -251,6 +264,68 @@ public class SearchGUI extends JFrame {
 	Action saveAndQuit = new AbstractAction() {
 		public void actionPerformed( ActionEvent e ) {
 		    resultWindow.setText( "\n  Saving index..." );
+		    File tokensFile = new File(tokensFilePath);
+		    File occurrencesFile = new File(occurrencesFilePath);
+		    tokensFile.delete();
+		    occurrencesFile.delete();
+		    try {
+				tokensFile.createNewFile();
+				occurrencesFile.createNewFile();
+			} catch (IOException e1) {
+				resultWindow.setText( "\n  Failed to save index." );
+				indexer.index.cleanup();
+			    System.exit( 0 );
+			}
+		    
+		    Iterator<String> tokenIterator = indexer.index.getDictionary();
+		    ArrayList<String> tokens = new ArrayList<String>();
+		    while(tokenIterator.hasNext()) {
+		    	tokens.add(tokenIterator.next());
+		    }
+		    
+		    Collections.sort(tokens);
+		    RandomAccessFile occurrencesWriter;
+		    BufferedWriter tokensWriter;
+		    try {
+		    	tokensWriter = new BufferedWriter(new FileWriter(new File(tokensFilePath)));
+				RandomAccessFile tokensWriter1 = new RandomAccessFile(tokensFile, "rw");
+				occurrencesWriter = new RandomAccessFile(occurrencesFile, "rw");
+			
+			    for(String token : tokens) {
+			    	PostingsList list = indexer.index.getPostings(token);
+			    	if(list == null || list.size() == 0) {
+			    		continue;
+			    	}
+			    	
+			    	StringBuffer sbTokens = new StringBuffer();
+			    	sbTokens.append(token);
+			    	for(PostingsEntry entry : list.getPostingsEntries()) {
+			    		sbTokens.append(" ");
+			    		sbTokens.append(entry.docID);
+			    		if(entry.docID > 9000) {
+			    			System.out.println(entry.docID);
+			    		}
+			    		sbTokens.append(" ");
+			    		sbTokens.append(occurrencesWriter.getFilePointer());
+			    		
+			    		StringBuilder sbOccurrences = new StringBuilder();
+			    		for(Integer occurrence : entry.getOccurrences()) {
+			    			sbOccurrences.append(occurrence);
+			    			sbOccurrences.append(" ");
+			    		}
+			    		occurrencesWriter.writeUTF(sbOccurrences.toString());
+			    	}
+			    	sbTokens.append('\n');
+			    	tokensWriter.write(sbTokens.toString());
+			    }
+			     
+			    occurrencesWriter.close();
+			    tokensWriter.close();
+		    } catch (IOException e1) {
+		    	e1.printStackTrace();
+		    	resultWindow.setText( "\n  Failed to save index." );
+			}
+		    
 		    indexer.index.cleanup();
 		    System.exit( 0 );
 		}
@@ -343,9 +418,14 @@ public class SearchGUI extends JFrame {
     private void index() {
 	synchronized ( indexLock ) {
 	    resultWindow.setText( "\n  Indexing, please wait..." );
-	    for ( int i=0; i<dirNames.size(); i++ ) {
-		File dokDir = new File( dirNames.get( i ));
-		indexer.processFiles( dokDir );
+	    if(!dirNames.isEmpty() && dirNames.get(0).equals("disk")) {
+	    	indexType = Index.DISK_INDEX;
+	    	indexer.index = new DiskIndex(tokensFilePath, occurrencesFilePath);
+	    } else {
+		    for ( int i=0; i<dirNames.size(); i++ ) {
+			File dokDir = new File( dirNames.get( i ));
+			indexer.processFiles( dokDir );
+		    }
 	    }
 	    resultWindow.setText( "\n  Done!" );
 	}

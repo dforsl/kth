@@ -33,6 +33,10 @@ public class PostingsList implements Comparable<PostingsList>, Serializable {
     public PostingsEntry get(int i) {
     	return list.get(i);
     }
+    
+    public LinkedList<PostingsEntry> getPostingsEntries() {
+    	return list;
+    }
 
     /**
      * Adds an occurrence at {@code offset} in {@code docID} to the corresponding {@code PostingsEntry}.
