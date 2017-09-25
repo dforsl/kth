@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{58AA1115-BD7A-4AAC-B949-2095E444317C}</ProjectGuid>
+    <RootNamespace>Fingolfin</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EntryPointSymbol>
+      </EntryPointSymbol>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="Ability.h" />
+    <ClInclude Include="Area.h" />
+    <ClInclude Include="Arena.h" />
+    <ClInclude Include="Attack.h" />
+    <ClInclude Include="Bag.h" />
+    <ClInclude Include="Boss.h" />
+    <ClInclude Include="Bruteforcer.h" />
+    <ClInclude Include="Character.h" />
+    <ClInclude Include="Class.h" />
+    <ClInclude Include="Decompile.h" />
+    <ClInclude Include="Delete.h" />
+    <ClInclude Include="Dereference.h" />
+    <ClInclude Include="Environment.h" />
+    <ClInclude Include="Exception.h" />
+    <ClInclude Include="GarbageCollection.h" />
+    <ClInclude Include="Guard.h" />
+    <ClInclude Include="Guru.h" />
+    <ClInclude Include="Haxxor.h" />
+    <ClInclude Include="Item.h" />
+    <ClInclude Include="JavaDeveloper.h" />
+    <ClInclude Include="Magician.h" />
+    <ClInclude Include="Memory.h" />
+    <ClInclude Include="MovementModerator.h" />
+    <ClInclude Include="new_debug.h" />
+    <ClInclude Include="Noob.h" />
+    <ClInclude Include="NPC.h" />
+    <ClInclude Include="Player.h" />
+    <ClInclude Include="Pointer.h" />
+    <ClInclude Include="Race.h" />
+    <ClInclude Include="SelectionListUtils.h" />
+    <ClInclude Include="Template.h" />
+    <ClInclude Include="TrialAndError.h" />
+    <ClInclude Include="Utils.h" />
+    <ClInclude Include="World.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Ability.cpp" />
+    <ClCompile Include="Area.cpp" />
+    <ClCompile Include="Attack.cpp" />
+    <ClCompile Include="Bag.cpp" />
+    <ClCompile Include="Boss.cpp" />
+    <ClCompile Include="Bruteforcer.cpp" />
+    <ClCompile Include="Character.cpp" />
+    <ClCompile Include="Class.cpp" />
+    <ClCompile Include="Decompile.cpp" />
+    <ClCompile Include="Delete.cpp" />
+    <ClCompile Include="Dereference.cpp" />
+    <ClCompile Include="Environment.cpp" />
+    <ClCompile Include="Exception.cpp" />
+    <ClCompile Include="GarbageCollection.cpp" />
+    <ClCompile Include="Guard.cpp" />
+    <ClCompile Include="Guru.cpp" />
+    <ClCompile Include="Haxxor.cpp" />
+    <ClCompile Include="JavaDeveloper.cpp" />
+    <ClCompile Include="Magician.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Memory.cpp" />
+    <ClCompile Include="Noob.cpp" />
+    <ClCompile Include="NPC.cpp" />
+    <ClCompile Include="Pointer.cpp" />
+    <ClCompile Include="Race.cpp" />
+    <ClCompile Include="Item.cpp" />
+    <ClCompile Include="SelectionListUtils.cpp" />
+    <ClCompile Include="Template.cpp" />
+    <ClCompile Include="TrialAndError.cpp" />
+    <ClCompile Include="Utils.cpp" />
+    <ClCompile Include="World.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

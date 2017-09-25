@@ -1,0 +1,264 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\models">
+      <UniqueIdentifier>{21db8228-60cb-45e7-9cf2-1bb04555e288}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\models">
+      <UniqueIdentifier>{b6818429-d057-4e73-95f2-14d4c12a7ff1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\models\environments">
+      <UniqueIdentifier>{f1eab3f4-9047-4209-80a8-bbb63f45b2bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\models\items">
+      <UniqueIdentifier>{2eb8757e-edcd-4fd7-b645-55525a4cb9d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\models\items">
+      <UniqueIdentifier>{48c13f89-30a9-4fcf-8d67-a667668d2ea5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\models\characters">
+      <UniqueIdentifier>{a710ee30-8530-496f-9b95-2da5e3c44134}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\models\characters\races">
+      <UniqueIdentifier>{708501cd-b4b7-4ddc-b648-6babde41ccef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\models\characters\classes">
+      <UniqueIdentifier>{68b0db01-e258-4302-ad43-325da0c8ddba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\models\characters">
+      <UniqueIdentifier>{40517025-bdfd-436b-b902-18164784cb52}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\models\characters\races">
+      <UniqueIdentifier>{45c0c735-4d13-424e-9597-683993687fc6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\models\characters\classes">
+      <UniqueIdentifier>{c5860fd0-fcc7-46be-ab03-644af4d1c478}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\models\characters\abilities">
+      <UniqueIdentifier>{8c410752-98ce-4908-80dc-111cde26c68b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\models\characters\abilities">
+      <UniqueIdentifier>{6a60ab8a-61cf-4388-9ae8-ea009d2d83f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\moderators">
+      <UniqueIdentifier>{f09e744a-2293-4160-9ea6-7f0f8f5bacc9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\moderators">
+      <UniqueIdentifier>{3c5f812b-91cd-4ec3-846b-c3f3b2b207ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\models\environments">
+      <UniqueIdentifier>{00f3f393-29f2-4459-8253-68b4b4b7db40}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Race.cpp">
+      <Filter>Source Files\models\characters\races</Filter>
+    </ClCompile>
+    <ClCompile Include="Class.cpp">
+      <Filter>Source Files\models\characters\classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Ability.cpp">
+      <Filter>Source Files\models\characters\abilities</Filter>
+    </ClCompile>
+    <ClCompile Include="Attack.cpp">
+      <Filter>Source Files\models\characters\abilities</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Environment.cpp">
+      <Filter>Source Files\models\environments</Filter>
+    </ClCompile>
+    <ClCompile Include="Area.cpp">
+      <Filter>Source Files\models\environments</Filter>
+    </ClCompile>
+    <ClCompile Include="World.cpp">
+      <Filter>Source Files\models\environments</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Character.cpp">
+      <Filter>Source Files\models\characters</Filter>
+    </ClCompile>
+    <ClCompile Include="Item.cpp">
+      <Filter>Source Files\models\items</Filter>
+    </ClCompile>
+    <ClCompile Include="Boss.cpp">
+      <Filter>Source Files\models\characters</Filter>
+    </ClCompile>
+    <ClCompile Include="Bag.cpp">
+      <Filter>Source Files\models\items</Filter>
+    </ClCompile>
+    <ClCompile Include="NPC.cpp">
+      <Filter>Source Files\models\characters</Filter>
+    </ClCompile>
+    <ClCompile Include="Pointer.cpp">
+      <Filter>Source Files\models\characters\races</Filter>
+    </ClCompile>
+    <ClCompile Include="Template.cpp">
+      <Filter>Source Files\models\characters\races</Filter>
+    </ClCompile>
+    <ClCompile Include="Memory.cpp">
+      <Filter>Source Files\models\characters\races</Filter>
+    </ClCompile>
+    <ClCompile Include="Noob.cpp">
+      <Filter>Source Files\models\characters\races</Filter>
+    </ClCompile>
+    <ClCompile Include="Haxxor.cpp">
+      <Filter>Source Files\models\characters\races</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectionListUtils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Bruteforcer.cpp">
+      <Filter>Source Files\models\characters\classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Guard.cpp">
+      <Filter>Source Files\models\characters\classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Guru.cpp">
+      <Filter>Source Files\models\characters\classes</Filter>
+    </ClCompile>
+    <ClCompile Include="JavaDeveloper.cpp">
+      <Filter>Source Files\models\characters\classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Magician.cpp">
+      <Filter>Source Files\models\characters\classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Decompile.cpp">
+      <Filter>Source Files\models\characters\abilities</Filter>
+    </ClCompile>
+    <ClCompile Include="Delete.cpp">
+      <Filter>Source Files\models\characters\abilities</Filter>
+    </ClCompile>
+    <ClCompile Include="Dereference.cpp">
+      <Filter>Source Files\models\characters\abilities</Filter>
+    </ClCompile>
+    <ClCompile Include="Exception.cpp">
+      <Filter>Source Files\models\characters\abilities</Filter>
+    </ClCompile>
+    <ClCompile Include="GarbageCollection.cpp">
+      <Filter>Source Files\models\characters\abilities</Filter>
+    </ClCompile>
+    <ClCompile Include="TrialAndError.cpp">
+      <Filter>Source Files\models\characters\abilities</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Race.h">
+      <Filter>Header Files\models\characters\races</Filter>
+    </ClInclude>
+    <ClInclude Include="Class.h">
+      <Filter>Header Files\models\characters\classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Character.h">
+      <Filter>Header Files\models\characters</Filter>
+    </ClInclude>
+    <ClInclude Include="NPC.h">
+      <Filter>Header Files\models\characters</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Header Files\models\characters</Filter>
+    </ClInclude>
+    <ClInclude Include="Ability.h">
+      <Filter>Header Files\models\characters\abilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Attack.h">
+      <Filter>Header Files\models\characters\abilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Arena.h">
+      <Filter>Header Files\moderators</Filter>
+    </ClInclude>
+    <ClInclude Include="Environment.h">
+      <Filter>Header Files\models\environments</Filter>
+    </ClInclude>
+    <ClInclude Include="Area.h">
+      <Filter>Header Files\models\environments</Filter>
+    </ClInclude>
+    <ClInclude Include="World.h">
+      <Filter>Header Files\models\environments</Filter>
+    </ClInclude>
+    <ClInclude Include="new_debug.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MovementModerator.h">
+      <Filter>Header Files\moderators</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Item.h">
+      <Filter>Header Files\models\items</Filter>
+    </ClInclude>
+    <ClInclude Include="Boss.h">
+      <Filter>Header Files\models\characters</Filter>
+    </ClInclude>
+    <ClInclude Include="Bag.h">
+      <Filter>Header Files\models\items</Filter>
+    </ClInclude>
+    <ClInclude Include="Pointer.h">
+      <Filter>Header Files\models\characters\races</Filter>
+    </ClInclude>
+    <ClInclude Include="Template.h">
+      <Filter>Header Files\models\characters\races</Filter>
+    </ClInclude>
+    <ClInclude Include="Memory.h">
+      <Filter>Header Files\models\characters\races</Filter>
+    </ClInclude>
+    <ClInclude Include="Noob.h">
+      <Filter>Header Files\models\characters\races</Filter>
+    </ClInclude>
+    <ClInclude Include="Haxxor.h">
+      <Filter>Header Files\models\characters\races</Filter>
+    </ClInclude>
+    <ClInclude Include="SelectionListUtils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Bruteforcer.h">
+      <Filter>Header Files\models\characters\classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Guard.h">
+      <Filter>Header Files\models\characters\classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Guru.h">
+      <Filter>Header Files\models\characters\classes</Filter>
+    </ClInclude>
+    <ClInclude Include="JavaDeveloper.h">
+      <Filter>Header Files\models\characters\classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Magician.h">
+      <Filter>Header Files\models\characters\classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Decompile.h">
+      <Filter>Header Files\models\characters\abilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Delete.h">
+      <Filter>Header Files\models\characters\abilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Dereference.h">
+      <Filter>Header Files\models\characters\abilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Exception.h">
+      <Filter>Header Files\models\characters\abilities</Filter>
+    </ClInclude>
+    <ClInclude Include="GarbageCollection.h">
+      <Filter>Header Files\models\characters\abilities</Filter>
+    </ClInclude>
+    <ClInclude Include="TrialAndError.h">
+      <Filter>Header Files\models\characters\abilities</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
